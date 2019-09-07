@@ -1,8 +1,9 @@
 #!/bin/sh
 set -e
-set -x
 
+echo "node version"
 node -v
+echo "abaplint version"
 abaplint -v
 
 exec "$@"
