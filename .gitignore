@@ -1,0 +1,2 @@
+# root copy for "gitlab-runner exec docker test"
+/.gitlab-ci.yml
