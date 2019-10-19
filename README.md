@@ -20,3 +20,6 @@ bin/push-containers.sh
 useful:
 - https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 - https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
+- remove stoped containers: `docker rm $(docker ps -qa --no-trunc --filter "status=exited")`
+- remove dangling images (no tag): `docker image prune`
+- remove all unused images: `docker image prune -a`
