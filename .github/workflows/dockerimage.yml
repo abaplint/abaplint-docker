@@ -1,17 +1,16 @@
 name: Docker Image CI
 
-on:
-  push:
-    branches:
-      - master
+on: 
+  repository_dispatch:
+    types: 
+      - deploy_docker
 
 jobs:
-
   build:
- 
     runs-on: ubuntu-latest
- 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag abaplint/abaplint:latest
+      run: bin/build-container.sh
+    - name: Deploy Docker image
+      run: bin/push-containers.sh --dryrun

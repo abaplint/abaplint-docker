@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t abaplint/abaplint:latest .
+docker build . --file Dockerfile --tag abaplint/abaplint:latest

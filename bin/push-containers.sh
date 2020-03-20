@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$1" = "--dryrun" ]; then
+    DRYRUN="yes"
+    echo "Dry run ..."
+fi
+
 VERSION=`docker run abaplint/abaplint:latest abaplint -v | tail -n 1`
 if [ -z $VERSION ]; then
     echo "Cannot identify abaplint version"
@@ -17,10 +22,12 @@ docker tag abaplint/abaplint abaplint/abaplint:$VERSION
 docker tag abaplint/abaplint abaplint/abaplint:$VERSION_2S
 docker tag abaplint/abaplint abaplint/abaplint:$VERSION_1S
 
-docker push abaplint/abaplint:latest
-docker push abaplint/abaplint:$VERSION
-docker push abaplint/abaplint:$VERSION_2S
-docker push abaplint/abaplint:$VERSION_1S
+if [ -z "$DRYRUN" ]; then
+    docker push abaplint/abaplint:latest
+    docker push abaplint/abaplint:$VERSION
+    docker push abaplint/abaplint:$VERSION_2S
+    docker push abaplint/abaplint:$VERSION_1S
+fi
 
 #cleanup
 docker rmi abaplint/abaplint:$VERSION
