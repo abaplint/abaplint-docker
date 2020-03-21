@@ -1,9 +1,12 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    # every hour
+    - cron:  '0 * * * *'
+  # push:
+  #   branches:
+  #     - master
   # repository_dispatch:
   #   types:
   #     - deploy_docker
@@ -38,3 +41,6 @@ jobs:
         password: ${{ env.DOCKER_PASSWORD }}
         repository: abaplint/abaplint
         tags: latest, ${{ steps.detect_version_change.outputs.NEW_VERSION }}
+    - name: Version validation
+      if: success() && steps.detect_version_change.outputs.VERSION_CHANGED == 'yes'
+      run: docker run abaplint/abaplint:latest abaplint -v
