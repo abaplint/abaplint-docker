@@ -29,6 +29,8 @@ jobs:
         if [ "$LAST_DOCKER_TAG" != "$LAST_NPM_VERSION" ]; then
           echo "::set-output name=VERSION_CHANGED::yes"
           echo "::set-output name=NEW_VERSION::$LAST_NPM_VERSION"
+        else
+          echo "No version change detected"
         fi
     - name: Build and publish docker container
       if: success() && steps.detect_version_change.outputs.VERSION_CHANGED == 'yes'
