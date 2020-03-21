@@ -20,6 +20,9 @@ bin/push-containers.sh
 useful:
 - https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 - https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
+- repository_dispatch github action: 
+  - https://blog.marcnuri.com/triggering-github-actions-across-different-repositories/
+  - https://github.com/marketplace/actions/repository-dispatch
 - remove stopped containers: `docker rm $(docker ps -qa --no-trunc --filter "status=exited")`
 - remove dangling images (no tag): `docker image prune`
 - remove all unused images: `docker image prune -a`
