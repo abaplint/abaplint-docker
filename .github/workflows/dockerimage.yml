@@ -1,10 +1,11 @@
 name: Docker Image CI
 
-on: 
-  branches:
-    - master
+on:
+  push:
+    branches:
+      - master
   # repository_dispatch:
-  #   types: 
+  #   types:
   #     - deploy_docker
 
 jobs:
