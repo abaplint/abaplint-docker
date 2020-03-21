@@ -1,6 +1,6 @@
 # abaplint docker config
 
-This repository hold official configuration for docker image of abaplint.
+This repository hold official configuration for docker image of [abaplint](https://github.com/abaplint/abaplint).
 
 The image is accessible at [Docker Hub](https://cloud.docker.com/u/abaplint/repository/docker/abaplint/abaplint).
 
@@ -20,6 +20,6 @@ bin/push-containers.sh
 useful:
 - https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 - https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
-- remove stoped containers: `docker rm $(docker ps -qa --no-trunc --filter "status=exited")`
+- remove stopped containers: `docker rm $(docker ps -qa --no-trunc --filter "status=exited")`
 - remove dangling images (no tag): `docker image prune`
 - remove all unused images: `docker image prune -a`
