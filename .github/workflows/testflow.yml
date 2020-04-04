@@ -16,6 +16,6 @@ jobs:
     - name: Build and test docker image
       run: |
         bin/build-container.sh
-        TEST_RUN_RESULT=`bin/test-run.sh`;true
+        TEST_RUN_RESULT=`bin/test-run.sh` || true
         echo "$TEST_RUN_RESULT"
         echo "$TEST_RUN_RESULT" | grep -q 'abaplint version' && echo "TEST OK"
