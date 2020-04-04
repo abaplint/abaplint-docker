@@ -4,7 +4,9 @@ This repository hold official configuration for docker image of [abaplint](https
 
 The image is accessible at [Docker Hub](https://cloud.docker.com/u/abaplint/repository/docker/abaplint/abaplint). Published automatically every hour.
 
-Templates for re-usage (e.g. `.gitlab-ci.yml` example) can be found in [templates](./templates).
+Templates for re-usage:
+
+- Gitlab: `.gitlab-ci.yml` example can be found in [templates](./templates). Working repo for this configation can be found at [abaplinted_sample](https://gitlab.com/atsybulsky/abaplinted_sample)
 
 ## Manual build procedure
 
@@ -15,7 +17,15 @@ bin/push-containers.sh
 # This pushes latest, and version tags (e.g. 2, 2.1, 2.1.3)
 ```
 
-useful:
+To test the built image:
+```sh
+bin/test-run.sh
+```
+
+---
+
+### Useful notes
+
 - https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 - https://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
 - repository_dispatch github action: 
