@@ -1,0 +1,21 @@
+name: Docker Image Test
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and test docker image
+      run: |
+        bin/build-container.sh
+        TEST_RUN_RESULT=`bin/test-run.sh`;true
+        echo "$TEST_RUN_RESULT"
+        echo "$TEST_RUN_RESULT" | grep -q 'abaplint version' && echo "TEST OK"
