@@ -1,9 +1,22 @@
 program ztest.
 
-data gv_hello type string.
+class my_name_factory definition final.
+  public section.
+    class-methods get_greeting
+      importing
+        name type string
+      returning
+        value(rv_greeting) type string.
+    DATA mv_counter TYPE i.
+endclass.
+class my_name_factory implementation.
+  method get_greeting.
+   add 1 to mv_counter.
+   rv_greeting = |Hello { name }|.
+  endmethod.
+endclass.
 
-if 1 = 1.
-  gv_hello = 'world'.
-endif.
-
-write: / gv_hello.
+start-of-selection.
+  data lv_greeting type string.
+  lv_greeting = my_name_factory=>get_greeting( 'Abaper' ). " this is very long string
+  write: / lv_greeting.
