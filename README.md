@@ -1,3 +1,5 @@
+![Docker Image Test](https://github.com/abaplint/abaplint-docker/workflows/Docker%20Image%20Test/badge.svg?branch=master)
+
 # abaplint docker config
 
 This repository hold official configuration for docker image of [abaplint](https://github.com/abaplint/abaplint).
