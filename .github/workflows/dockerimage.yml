@@ -20,7 +20,7 @@ jobs:
       id: detect_version_change
       env:
         DOCKER_URL: https://registry.hub.docker.com/v1/repositories/abaplint/abaplint
-        NPM_URL: https://registry.npmjs.org/abaplint
+        NPM_URL: https://registry.npmjs.org/@abaplint/cli
       run: |
         LAST_DOCKER_TAG=`curl -sS $DOCKER_URL/tags | jq '.[]["name"]' | tr -d '"' | grep -Po "(\d+\.)+\d+" | sort --version-sort | tail -1`
         LAST_NPM_VERSION=`curl -sS $NPM_URL | jq '.time | to_entries[] | .key' | tr -d '"' | grep -Po "(\d+\.)+\d+" | sort --version-sort | tail -1`
