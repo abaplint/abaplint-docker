@@ -1,4 +1,4 @@
-image: abaplint/abaplint:latest
-test:
+abaplint:
+  image: abaplint/abaplint:latest
   script:
     - abaplint
