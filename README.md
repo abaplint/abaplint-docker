@@ -4,7 +4,7 @@
 
 This repository hold official configuration for docker image of [abaplint](https://github.com/abaplint/abaplint).
 
-The image is accessible at [Docker Hub](https://cloud.docker.com/u/abaplint/repository/docker/abaplint/abaplint). Published automatically every hour.
+The image is accessible at [Docker Hub](https://hub.docker.com/r/abaplint/abaplint). Published automatically every hour.
 
 Templates for re-usage:
 
