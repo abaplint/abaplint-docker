@@ -8,8 +8,8 @@ on:
   #   branches:
   #     - master
   repository_dispatch:
-  #   types:
-  #     - deploy_docker
+    types:
+      - deploy_docker
 
 jobs:
   build:
