@@ -10,6 +10,7 @@ Templates for re-usage:
 
 - Gitlab: `.gitlab-ci.yml` example can be found in [templates](./templates). Working repo for this configation can be found at [abaplinted_sample](https://gitlab.com/atsybulsky/abaplinted_sample)
 
+
 ## Manual build procedure
 
 ```sh
